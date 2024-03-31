@@ -8,10 +8,6 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/websocket_example', {
-}).then(() => console.log('MongoDB connected'))
-.catch(err => console.error(err));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
